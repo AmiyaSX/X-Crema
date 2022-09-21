@@ -3,26 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/CameraFragment">
 
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.sxx.x_crema.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/CameraFragment"
+        android:name="com.sxx.x_crema.CameraFragment"
+        android:label="@string/camera_fragment_label"
+        tools:layout="@layout/fragment_camera">
+
+        <argument
+            android:name="camera_id"
+            app:argType="string"
+            app:nullable="false"/>
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            app:destination="@id/ImageViewFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.sxx.x_crema.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        android:id="@+id/ImageViewFragment"
+        android:name="com.sxx.x_crema.ImageViewFragment"
+        android:label="@string/image_fragment_label"
+        tools:layout="@layout/fragment_image_view">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/action_ImageViewFragment_to_CameraFragment"
+            app:destination="@id/CameraFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/ImageSelectFragment"
+        android:name="com.sxx.x_crema.ImageSelectFragment"
+        android:label="image_select_fragment_label"
+        tools:layout="@layout/fragment_image_select">
+        <action
+            android:id="@+id/action_ImageSelectFragment_to_ImageViewFragment"
+            app:destination="@+id/ImageViewFragment" />
+
+    </fragment>
+
 </navigation>
