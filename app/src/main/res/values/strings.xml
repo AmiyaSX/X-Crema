@@ -4,6 +4,8 @@
     <!-- Strings used for fragments for navigation -->
     <string name="camera_fragment_label">Camera Fragment</string>
     <string name="image_fragment_label">Image Fragment</string>
+    <string name="home_fragment_label">Home Fragment</string>
+
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
